@@ -1,0 +1,10 @@
+{
+    "source":{
+        "path":"./dev-sample",
+        "root":"src"
+    },
+    "target": {
+        "path":"./dev-sample",
+        "root":"dist"
+    }
+}
