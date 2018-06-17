@@ -1,3 +1,4 @@
+const SOURCE_MAP_SUPPORT = true?require('source-map-support').install():null;
 import {CliConfig} from '../cli/models/cli-config';
 export abstract class Action {
     constructor(cliParams:string[]) {
@@ -32,7 +33,7 @@ export abstract class Action {
         if (true)
             anything.forEach(thing=>console.error(thing))
     }
-    static requires(qualifier:ParamQualifier) : boolean | ParamQualifier  {
+    static invalid(qualifier:ParamQualifier) : boolean | ParamQualifier  {
         if (typeof qualifier.byIndex !== undefined && !isNaN(qualifier.byIndex)) {
             if (typeof process.argv[qualifier.byIndex] === 'undefined')
                 return { byIndex:qualifier.byIndex }
@@ -69,7 +70,7 @@ export abstract class Action {
                 return hasValueError();
             }
         }
-        return true;
+        return false;
 
     }
 }

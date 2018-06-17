@@ -1,8 +1,8 @@
 {
     "compilerOptions":{
-        "baseUrl": "./",
-        "rootDir":"./",
-        "outDir": "../.bin",
+        "baseUrl": "./src",
+        "rootDir":"./src",
+        "outDir": "./.bin",
         "experimentalDecorators": true,
         "target": "es6",
         "module": "commonjs",

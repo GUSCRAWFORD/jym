@@ -9,15 +9,15 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\.bin\\command.js",
+            "program": "${workspaceFolder}/.bin/app/cli/action.js",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ],
-            "sourceMapPathOverrides": {
-                "webpack:///./~/*": "${workspaceRoot}/node_modules/*",
-                "webpack:///./*": "${workspaceRoot}/*",
-                "webpack:///*": "*"
-            }
+            "args":[
+                "new",
+                "module",
+                "jyndex"
+            ]
         }
     ]
 }

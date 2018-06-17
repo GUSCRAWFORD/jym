@@ -3,7 +3,6 @@ import { ObjectType } from '../models/objects';
 export class NewAction extends Action {
     constructor(cliParams:string[]) {
         super (cliParams);
-        this.subject = cliParams[3], this.subjectName = cliParams[4];
         Action.debug(`Running: "new", subject:"${SUBJECT}"`);
         if( typeof this[this.subject] === 'function')
             this[this.subject](cliParams);
@@ -12,7 +11,8 @@ export class NewAction extends Action {
     subjectName:string;
 
     async module(cliParams) {
-        Action.debug(`Generating a module: "${SUBJECT_NAME}" in "${this.config.target.path}"`);
+        if(!Action.invalid({byIndex:4}))
+            Action.debug(`Generating a module: "${SUBJECT_NAME}" in "${this.config.target.path}"`);
 
     }
 }
