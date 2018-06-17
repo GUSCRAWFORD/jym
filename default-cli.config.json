@@ -6,5 +6,8 @@
     "target": {
         "path":"./dev-sample",
         "root":"dist"
+    },
+    "environment":{
+        "DEBUG":true
     }
 }
